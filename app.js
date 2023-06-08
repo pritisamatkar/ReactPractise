@@ -11,7 +11,17 @@ const HeadingComponent1 = () => {
 }
 
 //this is also React functional component 
-const HeadingComponent2 = () => <h1 className='functional'> hello from functional component</h1>;
+const HeadingComponent2 = () => (
+    //react fragment (root)= behaves like an empty tag, not gets added to dom
+    <React.Fragment>
+        <div>
+            <h1 className='functional'> hello from functional component</h1>
+        </div>
+        <div>
+            <h1 className='functional'> hello from functional component</h1>
+        </div>
+    </React.Fragment>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent1 />);
