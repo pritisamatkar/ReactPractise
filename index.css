@@ -1,0 +1,40 @@
+.header{
+    display: flex;  
+    justify-content: space-between;
+    border: 1px solid gray;
+  }
+  .logo{
+      width: 200px;
+  }
+  .nav-items > ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 24px;
+    
+}
+.nav-items > ul > li {
+   padding: 10px;
+   margin: 10px;
+}
+.rest-card{
+    width: 200px;
+    height: 300px;
+   
+    margin: 5px;
+}
+.rest-card:hover{
+    border:  1px solid black;
+    cursor: pointer;
+}
+
+.search{
+    padding: 10px;
+}
+.rest-logo{
+    width: 100%;
+ }
+.restContainer{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
