@@ -14,4 +14,4 @@ const HeadingComponent1 = () => {
 const HeadingComponent2 = () => <h1 className='functional'> hello from functional component</h1>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeadingComponent1 />);
