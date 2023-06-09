@@ -1,14 +1,9 @@
 const restList = [
     {
-      "type": "restaurant",
+     
       "data": {
-        "type": "F",
         "id": "18772",
         "name": "California Burrito",
-        "uuid": "2c4121b2-a569-429f-b5f2-aac00f7458c2",
-        "city": "1",
-        "area": "Marathahalli",
-        "totalRatingsString": "10000+ ratings",
         "cloudinaryImageId": "zwwvf8n0jlo1bjx19qzg",
         "cuisines": [
           "Mexican",
@@ -20,17 +15,14 @@ const restList = [
         ],
         "tags": [],
         "costForTwo": 25000,
-        "costForTwoString": "₹250 FOR TWO",
         "deliveryTime": 25,
         "promoted": true,
         "avgRating": "4.4",
-        "totalRatings": 10000,
-        "new": false
-      },
-      "subtype": "basic"
+        
+      }
     },
     {
-      "type": "restaurant",
+     
       "data": {
         "type": "F",
         "id": "424658",
@@ -49,11 +41,10 @@ const restList = [
         "avgRating": "4.4",
         "totalRatings": 10000,
         "new": false
-      },
-      "subtype": "basic"
+      }
     },
     {
-        "type": "restaurant",
+       
         "data": {
           "type": "F",
           "id": "424678",
@@ -77,7 +68,7 @@ const restList = [
         "subtype": "basic"
       },
     {
-      "type": "restaurant",
+     
       "data": {
         "type": "F",
         "id": "636313",
@@ -98,11 +89,11 @@ const restList = [
         "avgRating": "4.6",
         "totalRatings": 10000,
         "new": false
-      },
-      "subtype": "basic"
+      }
+     
     },
     {
-      "type": "restaurant",
+     
       "data": {
         "type": "F",
         "id": "262167",
