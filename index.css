@@ -18,9 +18,8 @@
 }
 .rest-card{
     width: 200px;
-  
-   
     margin: 5px;
+    background-color: #f0f0f0;
 }
 .rest-card:hover{
     border:  1px solid black;
@@ -38,4 +37,8 @@
     display: flex;
     flex-wrap: wrap;
   
+}
+.filter_btn{
+  margin: 10px;
+  cursor: pointer;;
 }
