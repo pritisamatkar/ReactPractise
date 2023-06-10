@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import RestaurantCard  from './RestaurantCard';
 import restList from '../utils/mockData'; 
+import { async } from 'q';
 
 const Body = () =>{
 
     // useState hook
     const [ listRestro, setListRestro] = useState(restList);
+    useEffect ( ()=>{
+       fetchData();
+    },[]);
+   
+    const fetchData = async() =>{
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6488417&lng=73.7521986&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        console.log(json);
+        setListRestro(json.data.cards[2].data.data.cards);
+    }
     return (
         <div className='body'>
             <div className='filter'>
