@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import RestaurantCard  from './RestaurantCard';
-
+import Shimmer from './shimmer';
 import { async } from 'q';
 
 const Body = () =>{
@@ -20,7 +20,7 @@ const Body = () =>{
         setListRestro(json?.data?.cards[2]?.data?.data?.cards);
     };
     if(listRestro.length === 0){
-        return <h1>Loading...</h1>
+        return <Shimmer />
     }
     return (
         <div className='body'>
