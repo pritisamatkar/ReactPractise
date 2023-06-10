@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import RestaurantCard  from './RestaurantCard';
-import restList from '../utils/mockData'; 
+
 import { async } from 'q';
 
 const Body = () =>{
 
     // useState hook
-    const [ listRestro, setListRestro] = useState(restList);
+    const [ listRestro, setListRestro] = useState([]);
     useEffect ( ()=>{
        fetchData();
     },[]);
@@ -16,7 +16,11 @@ const Body = () =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6488417&lng=73.7521986&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         console.log(json);
-        setListRestro(json.data.cards[2].data.data.cards);
+        //optional chaning
+        setListRestro(json?.data?.cards[2]?.data?.data?.cards);
+    };
+    if(listRestro.length === 0){
+        return <h1>Loading...</h1>
     }
     return (
         <div className='body'>
