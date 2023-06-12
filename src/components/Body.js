@@ -7,7 +7,11 @@ import { async } from 'q';
 const Body = () =>{
 
     // useState hook
+    //keeping original list of restro intact
     const [ listRestro, setListRestro] = useState([]);
+    const [searchText, setSearchText] = useState("");
+    // filter Restro state to filter out data
+    const [ filteredListRestro, setFilteredListRestro] = useState([]);
     useEffect ( ()=>{
        fetchData();
     },[]);
@@ -18,13 +22,29 @@ const Body = () =>{
         console.log(json);
         //optional chaning
         setListRestro(json?.data?.cards[2]?.data?.data?.cards);
+        setFilteredListRestro(json?.data?.cards[2]?.data?.data?.cards);
     };
-    if(listRestro.length === 0){
+    //conditional rendering
+   /*  if(listRestro.length === 0){
         return <Shimmer />
-    }
-    return (
+    } */
+    return listRestro.length === 0 ? <Shimmer/> :(
         <div className='body'>
+           
             <div className='filter'>
+            <div className='search'>
+                <input type='text'  className='search-box' value={searchText} onChange={ (e) =>{
+                    setSearchText( e.target.value)
+               }}/>
+                <button onClick={ () => {
+                    //filter the restro cards and update the UI
+                    console.log(searchText);
+                    const filterRestraurants = listRestro.filter(
+                        (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                    );
+                    setFilteredListRestro(filterRestraurants);
+                }}>Search</button>
+            </div>
                 <button className='filter_btn' onClick={ ()=> {
                      const filterList = listRestro.filter( (res) => res.data.avgRating > 4)
                      console.log(filterList);
@@ -35,7 +55,7 @@ const Body = () =>{
             </div>
             <div className='restContainer'>
             {
-                listRestro.map( restaurant => <RestaurantCard
+                filteredListRestro.map( restaurant => <RestaurantCard
                 key= {restaurant.data.id}
                 restData ={restaurant}
                 />)

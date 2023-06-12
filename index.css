@@ -51,8 +51,31 @@
     height: 400px;
     margin: 5px;
     background-color: #f0f0f0;
+    background: linear-gradient(to right, #f0f0f0 20%, #e0e0e0 40%, #f0f0f0 60%);
+  background-size: 200% 100%;
+  animation: shimmer-animation 1.5s infinite;
 }
 .shimmer-cards:hover{
     border:  1px solid black;
     cursor: pointer;
+}
+@keyframes shimmer-animation {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  .loginBtn {
+    cursor: pointer;
+    margin: 0 20px;
+    display: inline-block;
+    background-color:white;
+    border: none;
+    font-size: 24px;
+    color: blue;
+}
+.filter{
+    display: flex;
 }
