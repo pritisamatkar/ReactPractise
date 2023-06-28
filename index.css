@@ -79,3 +79,7 @@
 .filter{
     display: flex;
 }
+.restContainer > a {
+    text-decoration: none;
+    color: black;
+}
