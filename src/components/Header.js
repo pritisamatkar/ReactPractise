@@ -8,18 +8,18 @@ const Header =() => {
     //useonline custom hook
     const onlineStatus = useOnlineStatus();
     return (
-        <div className='header'>
-            <div className='logo-container'>
-                <img className='logo' src={LOGO_URL}/>
+        <div className='flex justify-between bg-gray-100'>
+            <div className='logo-container m-4'>
+                <img className=" w-[70px]" src={LOGO_URL}/>
             </div>
-            <div className='nav-items'>
-                <ul>
-                    <li>OnlineStatus : {onlineStatus ? "✅" : "🔴" }</li>
-                    <li> <Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart</li>
+            <div >
+                <ul className='flex p-5 m-4'>
+                    <li className='px-4'>OnlineStatus : {onlineStatus ? "✅" : "🔴" }</li>
+                    <li className='px-4'> <Link to="/">Home</Link></li>
+                    <li className='px-4'><Link to="/about">About</Link></li>
+                    <li className='px-4'><Link to="/contact">Contact</Link></li>
+                    <li className='px-4'><Link to="/grocery">Grocery</Link></li>
+                    <li className='px-4'>Cart</li>
                     <button className='loginBtn' onClick={ ()=>{ btnName=== "Login" ? setBtnName("Logout"): setBtnName("Login")}}>{btnName}</button>
                 </ul>
             </div>
